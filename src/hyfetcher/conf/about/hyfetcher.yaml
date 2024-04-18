@@ -1,0 +1,6 @@
+_open_link_: False
+name: "HyFI-Fetcher"
+authors: "Young Joon Lee <entelecheia@hotmail.com>"
+description: "HyFI-Fetcher is a Python package for programmatically scraping websites to extract various data, serving as a plugin for HyFI."
+homepage: "https://hyfi-fetcher.entelecheia.ai"
+license: "MIT"
