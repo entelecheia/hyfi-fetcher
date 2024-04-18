@@ -5,7 +5,7 @@ author: Young Joon Lee
 build_and_release: true
 code_template_answers_file: .copier-hyfi-config.yaml
 code_template_source: gh:entelecheia/hyfi-template
-codecov_graph_token: BC2f1ooCPI
+codecov_graph_token: 7fEXGrkESp
 copyright_year: 2023
 documentaion_tool: jupyter-book
 documentation_url: https://hyfi-fetcher.entelecheia.ai
@@ -24,10 +24,12 @@ package_scripts:
 poe_task_files:
 - .tasks.toml
 - .tasks-extra.toml
-project_description: HyFI-Fetcher is a LLM powered web scraping tool for HyFI. It is designed to extract data from various websites and serve as a plugin for HyFI.
+project_description: HyFI-Fetcher is a LLM powered web scraping tool for HyFI. It
+    is designed to extract data from various websites and serve as a plugin for HyFI.
 project_license: MIT
 project_name: hyfi-fetcher
-project_short_description: HyFI-Fetcher is a Python package for programmatically scraping websites to extract various data, serving as a plugin for HyFI.
+project_short_description: HyFI-Fetcher is a Python package for programmatically scraping
+    websites to extract various data, serving as a plugin for HyFI.
 upload_to_release: true
 upload_to_repository: true
 use_launch_buttons: true
