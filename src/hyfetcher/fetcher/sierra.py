@@ -1,3 +1,7 @@
+"""
+Fetcher for Sierra Club website.
+"""
+
 import logging
 from typing import List, Optional
 
@@ -9,6 +13,23 @@ logger = logging.getLogger(__name__)
 class SierraClubFetcher(BaseFetcher):
     """
     Fetcher for Sierra Club website.
+
+    This class provides methods to fetch press releases from the Sierra Club website.
+    It inherits from the BaseFetcher class.
+
+    Attributes:
+        _config_name_ (str): The name of the configuration for this fetcher.
+        _config_group_ (str): The configuration group for this fetcher.
+        output_dir (str): The output directory for storing fetched data.
+        base_url (str): The base URL of the Sierra Club website.
+        search_url (str): The URL pattern for searching press releases.
+        search_keywords (List[str]): The keywords to use for searching press releases.
+        use_playwright (bool): Flag indicating whether to use Playwright for fetching.
+
+        link_find_all_name (str): The HTML tag name for finding links.
+        link_find_all_attrs (dict): The attributes for finding links.
+        lint_article_name (str): The HTML tag name for finding article titles.
+        lint_article_attrs (dict): The attributes for finding article titles.
     """
 
     _config_name_: str = "sierraclub"
@@ -31,7 +52,19 @@ class SierraClubFetcher(BaseFetcher):
         print_every: int = 10,
         verbose: bool = False,
     ) -> Optional[List[dict]]:
-        """Get the links from the given page."""
+        """
+        Get the links from the given page.
+
+        Args:
+            page_url (str): The URL of the page to parse.
+            print_every (int): The interval for printing progress.
+            verbose (bool): Flag indicating whether to print verbose information.
+
+        Returns:
+            Optional[List[dict]]: A list of dictionaries containing the parsed links.
+                Each dictionary contains the title, timestamp, and URL of an article.
+                Returns None if parsing fails.
+        """
         links = []
         soup = self.get_soup(page_url)
 
@@ -68,7 +101,16 @@ class SierraClubFetcher(BaseFetcher):
         return links
 
     def _parse_article_text(self, url: str) -> Optional[dict]:
-        """Parse the article text from the given divs."""
+        """
+        Parse the article text from the given URL.
+
+        Args:
+            url (str): The URL of the article to parse.
+
+        Returns:
+            Optional[dict]: A dictionary containing the parsed article title and content.
+                Returns None if parsing fails.
+        """
         soup = self.get_soup(url)
         if soup is None:
             return None
