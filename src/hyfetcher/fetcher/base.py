@@ -58,6 +58,7 @@ class BaseFetcher(BaseModel):
     search_url: str = ""
     start_page: Optional[int] = 1
     start_urls: List[str] = []
+    use_playwright: bool = False
     verbose: bool = True
 
     _links: List[dict] = []
