@@ -1,5 +1,13 @@
 <!--next-version-placeholder-->
 
+## v0.2.0 (2024-04-19)
+
+### Feature
+
+* **fetcher:** Add support for Playwright; Add support for Playwright in the fetcher class and include a new boolean attribute for using it. ([`d1558c1`](https://github.com/entelecheia/hyfi-fetcher/commit/d1558c13b451ae117dd0a2ffb0f0985a509fd6f7))
+* **sierraclub:** Enable playwright for web scraping ([`734762b`](https://github.com/entelecheia/hyfi-fetcher/commit/734762b653da7e73490b2d03577abb563f67f804))
+* **envrc:** Add .envrc file with project environment settings ([`e660429`](https://github.com/entelecheia/hyfi-fetcher/commit/e660429c4154e65650a49bdf889926d970acf7de))
+
 ## v0.1.0 (2024-04-19)
 
 ### Feature
