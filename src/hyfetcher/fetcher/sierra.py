@@ -20,7 +20,7 @@ class SierraClubFetcher(BaseFetcher):
     base_url: str = "https://www.sierraclub.org"
     search_url: str = base_url + "/press-releases?_wrapper_format=html&page={page}"
     search_keywords: List[str] = []
-    use_playwright: bool = True
+    use_playwright: bool = False
 
     link_find_all_name: str = "div"
     link_find_all_attrs: dict = {"class": "post"}

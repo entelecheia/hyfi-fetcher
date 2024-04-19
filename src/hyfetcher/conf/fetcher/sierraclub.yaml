@@ -18,7 +18,7 @@ search_keywords: []
 search_url: https://www.sierraclub.org/press-releases?_wrapper_format=html&page={page}
 start_page: 1
 start_urls: []
-use_playwright: true
+use_playwright: false
 verbose: true
 link_find_all_name: div
 link_find_all_attrs:
