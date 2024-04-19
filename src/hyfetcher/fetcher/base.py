@@ -355,18 +355,6 @@ class BaseFetcher(BaseModel):
         num_workers: int,
         batch_func: Callable,
     ) -> List[dict]:
-        with mp.Pool(num_workers) as pool:
-            results = pool.map(batch_func, self.links)
-        articles = []
-        for result in results:
-            articles.extend(result)
-        return articles
-
-    def _fetch_articles_mp(
-        self,
-        num_workers: int,
-        batch_func: Callable,
-    ) -> List[dict]:
         articles = []
         if len(self.links) < 1:
             return articles
