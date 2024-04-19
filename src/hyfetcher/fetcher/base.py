@@ -10,7 +10,7 @@ from typing import Callable, List, Literal, Optional
 import requests
 from hyfi.composer import BaseModel
 from hyfi.main import HyFI
-from playwright.async_api import async_playwright
+from playwright.sync_api import sync_playwright
 
 logger = logging.getLogger(__name__)
 
@@ -76,7 +76,7 @@ class BaseFetcher(BaseModel):
     def request(
         self,
         url: str,
-        use_async: bool = False,
+        use_playwright: bool = False,
         timeout: float | None = None,
         params: dict | None = None,
         **kwargs,
@@ -92,8 +92,8 @@ class BaseFetcher(BaseModel):
         Returns:
             Response object containing response text and status code
         """
-        if use_async:
-            res, status_code = async_request(url, timeout=timeout, **kwargs)
+        if use_playwright:
+            res, status_code = sync_playwright_request(url, timeout=timeout, **kwargs)
             return Response(text=res, status_code=status_code)
         res = requests.get(url, params=params, headers=self._headers, **kwargs)
         return Response(text=res.text, status_code=res.status_code)
@@ -456,7 +456,7 @@ def scrape_article_text(
     return articles
 
 
-async def async_request(
+def sync_playwright_request(
     url: str,
     timeout: float | None = None,
     wait_until: (
@@ -468,20 +468,18 @@ async def async_request(
     logger.info("Started scraping...")
     results = ""
     status_code = 0
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True, **kwargs)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True, **kwargs)
         try:
-            page = await browser.new_page()
-            await page.goto(
-                url, wait_until=wait_until, timeout=timeout, referer=referer
-            )
+            page = browser.new_page()
+            page.goto(url, wait_until=wait_until, timeout=timeout, referer=referer)
 
-            results = await page.content()
+            results = page.content()
             status_code = 200
             logger.info("Content scraped from %s", url)
         except Exception as e:
             results = f"Error: {e}"
             status_code = 500
             logger.error("Error: %s", e)
-        await browser.close()
+        browser.close()
     return results, status_code
