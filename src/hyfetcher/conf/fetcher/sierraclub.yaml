@@ -3,7 +3,7 @@ _config_name_: sierraclub
 _config_group_: /fetcher
 article_filename: articles.jsonl
 base_url: https://www.sierraclub.org
-delay_between_requests: 0.0
+delay_between_requests: 0.5
 key_field: url
 keyword_placeholder: '{keyword}'
 link_filename: links.jsonl

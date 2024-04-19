@@ -43,7 +43,7 @@ class BaseFetcher(BaseModel):
 
     article_filename: str = "articles.jsonl"
     base_url: str = ""
-    delay_between_requests: float = 0.0
+    delay_between_requests: float = 0.5
     key_field: str = "url"
     keyword_placeholder: str = "{keyword}"
     link_filename: str = "links.jsonl"
