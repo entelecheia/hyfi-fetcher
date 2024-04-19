@@ -1,0 +1,8 @@
+defaults:
+  - __init__
+_config_name_: openai
+model: gpt-3.5-turbo
+rate_limit_per_minute: 3500
+temperature: 0.0
+seed: 42
+openai_organization:

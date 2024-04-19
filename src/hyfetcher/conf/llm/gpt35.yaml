@@ -1,0 +1,5 @@
+defaults:
+  - openai
+_config_name_: gpt35
+model: gpt-3.5-turbo
+rate_limit_per_minute: 3500
