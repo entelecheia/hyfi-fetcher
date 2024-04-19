@@ -120,3 +120,6 @@ init-project: initialize remove-template ## initialize the project (Warning: do 
 
 reinit-project: install-copier ## reinitialize the project (Warning: this may overwrite existing files!)
 	@bash -c 'args=(); while IFS= read -r file; do args+=("--skip" "$$file"); done < .copierignore; copier copy --trust "$${args[@]}" --data 'code_template_source=gh:entelecheia/hyfi-template' --answers-file .copier-config.yaml gh:entelecheia/hyperfast-python-template .'
+
+install-playwright: ## install playwright
+	@command -v playwright &> /dev/null && playwright install || true
