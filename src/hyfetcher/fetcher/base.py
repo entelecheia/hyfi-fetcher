@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Callable, List, Literal, Optional
 
 import requests
+from bs4 import BeautifulSoup
 from hyfi.composer import BaseModel
 from hyfi.main import HyFI
 from playwright.sync_api import sync_playwright
@@ -73,6 +74,20 @@ class BaseFetcher(BaseModel):
     def fetch(self):
         self.fetch_links()
         self.fetch_articles()
+
+    def get_soup(self, url: str):
+        """Retrieve and parse HTML content at the given endpoint."""
+        try:
+            response = self.request(url, use_playwright=self.use_playwright)
+            # Check if page exists (status code 200) or not (status code 404)
+            if response.status_code == 404:
+                logger.info("Page [%s] does not exist, stopping...", url)
+                return None
+            return BeautifulSoup(response.text, "html.parser")
+        except Exception as e:
+            logger.error("Error while fetching the page url: %s", url)
+            logger.error("Error: %s", e)
+            return None
 
     def request(
         self,
