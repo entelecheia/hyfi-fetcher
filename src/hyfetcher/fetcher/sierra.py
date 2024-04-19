@@ -82,7 +82,12 @@ class SierraClubFetcher(BaseFetcher):
                 logger.info("No title found for article %s", article_no)
                 continue
             title = title_div.text
-            url = self.base_url + article.find("a")["href"]
+            a_link = article.find("a")
+            if a_link:
+                url = self.base_url + a_link["href"]
+            else:
+                logger.info("No link found for article %s", article_no)
+                continue
 
             date_ = article.find("div", class_="views-field-field-published-date").find(
                 "div", class_="field-content"
