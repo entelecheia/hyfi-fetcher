@@ -20,6 +20,7 @@ class SierraClubFetcher(BaseFetcher):
     base_url: str = "https://www.sierraclub.org"
     search_url: str = base_url + "/press-releases?_wrapper_format=html&page={page}"
     search_keywords: List[str] = []
+    use_playwright: bool = True
 
     link_find_all_name: str = "div"
     link_find_all_attrs: dict = {"class": "post"}
@@ -35,7 +36,7 @@ class SierraClubFetcher(BaseFetcher):
         """Get the links from the given page."""
         links = []
         try:
-            response = self.request(page_url, use_playwright=True)
+            response = self.request(page_url, use_playwright=self.use_playwright)
             # Check if page exists (status code 200) or not (status code 404)
             if response.status_code == 404:
                 logger.info("Page [%s] does not exist, stopping...", page_url)
@@ -80,7 +81,7 @@ class SierraClubFetcher(BaseFetcher):
     def _parse_article_text(self, url: str) -> Optional[dict]:
         """Parse the article text from the given divs."""
         try:
-            response = self.request(url)
+            response = self.request(url, use_playwright=self.use_playwright)
             soup = BeautifulSoup(response.text, "html.parser")
             title = soup.find("h1", class_="page-header").text.strip()
             content = soup.find("article", class_="press-release").text.strip()
