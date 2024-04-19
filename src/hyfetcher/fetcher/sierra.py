@@ -1,10 +1,9 @@
 import logging
-from datetime import datetime
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
 from bs4 import BeautifulSoup
 
-from .base import BaseFetcher, By
+from .base import BaseFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +35,7 @@ class SierraClubFetcher(BaseFetcher):
         """Get the links from the given page."""
         links = []
         try:
-            response = self.request(page_url)
+            response = self.request(page_url, use_playwright=True)
             # Check if page exists (status code 200) or not (status code 404)
             if response.status_code == 404:
                 logger.info("Page [%s] does not exist, stopping...", page_url)
