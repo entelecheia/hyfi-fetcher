@@ -10,7 +10,7 @@ from .base import BaseFetcher
 logger = logging.getLogger(__name__)
 
 
-class SierraClubFetcher(BaseFetcher):
+class SampleFetcher(BaseFetcher):
     """
     Fetcher for Sierra Club website.
 
@@ -32,7 +32,7 @@ class SierraClubFetcher(BaseFetcher):
         lint_article_attrs (dict): The attributes for finding article titles.
     """
 
-    _config_name_: str = "sierraclub"
+    _config_name_: str = "sample"
     _config_group_: str = "/fetcher"
     output_dir: str = f"workspace/datasets{_config_group_}/{_config_name_}"
 
@@ -46,7 +46,7 @@ class SierraClubFetcher(BaseFetcher):
     lint_article_name: str = "h3"
     lint_article_attrs: dict = {"class": "post-title"}
 
-    def _parse_page_links(
+    def parse_page_links(
         self,
         page_url: str,
         print_every: int = 10,
@@ -82,8 +82,7 @@ class SierraClubFetcher(BaseFetcher):
                 logger.info("No title found for article %s", article_no)
                 continue
             title = title_div.text
-            a_link = article.find("a")
-            if a_link:
+            if a_link := article.find("a"):
                 url = self.base_url + a_link["href"]
             else:
                 logger.info("No link found for article %s", article_no)
@@ -105,7 +104,7 @@ class SierraClubFetcher(BaseFetcher):
             links.append(link)
         return links
 
-    def _parse_article_text(self, url: str) -> Optional[dict]:
+    def parse_article_text(self, url: str) -> Optional[dict]:
         """
         Parse the article text from the given URL.
 
