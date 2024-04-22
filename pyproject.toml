@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hyfi-fetcher"
-version = "0.2.0"
+version = "0.2.1"
 description = "HyFI-Fetcher is a Python package for programmatically scraping websites to extract various data, serving as a plugin for HyFI."
 authors = ["Young Joon Lee <entelecheia@hotmail.com>"]
 license = "MIT"

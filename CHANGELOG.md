@@ -1,5 +1,12 @@
 <!--next-version-placeholder-->
 
+## v0.2.1 (2024-04-22)
+
+### Fix
+
+* **fetcher:** Fix test_sierra_fetcher to test_ssample_fetcher function name ([`884c806`](https://github.com/entelecheia/hyfi-fetcher/commit/884c806d4ab6bff70e3050fa2eecac8aec711af0))
+* **sierra:** Fix issue with missing or incorrect article links ([`e8564d5`](https://github.com/entelecheia/hyfi-fetcher/commit/e8564d51a1dba2890f195f6f29de87cbf4c81f60))
+
 ## v0.2.0 (2024-04-19)
 
 ### Feature
