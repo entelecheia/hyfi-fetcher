@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.2.2 (2024-04-22)
+
+### Fix
+
+* **fetcher:** Add base fetcher module with classes and constants ([`280d387`](https://github.com/entelecheia/hyfi-fetcher/commit/280d3872ecb874f88854513de5fb292d4d5887ff))
+
 ## v0.2.1 (2024-04-22)
 
 ### Fix
