@@ -10,7 +10,7 @@ from .base import BaseFetcher
 logger = logging.getLogger(__name__)
 
 
-class SierraClubFetcher(BaseFetcher):
+class SampleFetcher(BaseFetcher):
     """
     Fetcher for Sierra Club website.
 
@@ -46,7 +46,7 @@ class SierraClubFetcher(BaseFetcher):
     lint_article_name: str = "h3"
     lint_article_attrs: dict = {"class": "post-title"}
 
-    def _parse_page_links(
+    def parse_page_links(
         self,
         page_url: str,
         print_every: int = 10,
@@ -105,7 +105,7 @@ class SierraClubFetcher(BaseFetcher):
             links.append(link)
         return links
 
-    def _parse_article_text(self, url: str) -> Optional[dict]:
+    def parse_article_text(self, url: str) -> Optional[dict]:
         """
         Parse the article text from the given URL.
 
