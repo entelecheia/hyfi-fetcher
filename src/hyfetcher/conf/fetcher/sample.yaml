@@ -1,5 +1,5 @@
-_target_: hyfetcher.fetcher.sierra.SierraClubFetcher
-_config_name_: sierraclub
+_target_: hyfetcher.fetcher.sample.SampleFetcher
+_config_name_: sample
 _config_group_: /fetcher
 article_filename: articles.jsonl
 base_url: https://www.sierraclub.org
@@ -10,7 +10,7 @@ link_filename: links.jsonl
 max_num_articles: 30
 max_num_pages: 2
 num_workers: 1
-output_dir: workspace/datasets/fetcher/sierraclub
+output_dir: workspace/datasets/fetcher/sample
 overwrite_existing: false
 page_placeholder: '{page}'
 print_every: 10
