@@ -32,7 +32,7 @@ class SampleFetcher(BaseFetcher):
         lint_article_attrs (dict): The attributes for finding article titles.
     """
 
-    _config_name_: str = "sierraclub"
+    _config_name_: str = "sample"
     _config_group_: str = "/fetcher"
     output_dir: str = f"workspace/datasets{_config_group_}/{_config_name_}"
 
