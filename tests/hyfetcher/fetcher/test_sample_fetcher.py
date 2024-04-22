@@ -1,12 +1,12 @@
-from hyfetcher.fetcher.sierra import SierraClubFetcher
+from hyfetcher.fetcher.sample import SampleFetcher
 
 
 def test_generate_config():
-    SierraClubFetcher.generate_config()
+    SampleFetcher.generate_config()
 
 
 def test_sierra_fetcher():
-    siera = SierraClubFetcher(
+    siera = SampleFetcher(
         search_keywords=[],
         max_num_pages=1,
         max_num_articles=1,
