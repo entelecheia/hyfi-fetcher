@@ -33,5 +33,10 @@
    :toctree:
    :recursive:
 
+   hyfetcher.agents
+   hyfetcher.chains
    hyfetcher.conf
+   hyfetcher.fetcher
+   hyfetcher.llms
+   hyfetcher.tools
 

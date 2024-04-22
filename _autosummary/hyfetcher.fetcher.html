@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>hyfetcher &#8212; HyFI-Fetcher</title>
+    <title>hyfetcher.fetcher &#8212; HyFI-Fetcher</title>
   
   
   
@@ -89,12 +89,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/hyfetcher';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_autosummary/hyfetcher.fetcher';</script>
     <link rel="icon" href="https://assets.entelecheia.ai/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hyfetcher.agents" href="hyfetcher.agents.html" />
-    <link rel="prev" title="API Reference" href="../api.html" />
+    <link rel="next" title="hyfetcher.fetcher.schemas" href="hyfetcher.fetcher.schemas.html" />
+    <link rel="prev" title="hyfetcher.conf" href="hyfetcher.conf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -206,11 +206,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../api.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">hyfetcher</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="hyfetcher.html">hyfetcher</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hyfetcher.agents.html">hyfetcher.agents</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hyfetcher.chains.html">hyfetcher.chains</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hyfetcher.conf.html">hyfetcher.conf</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="hyfetcher.fetcher.html">hyfetcher.fetcher</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">hyfetcher.fetcher</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="hyfetcher.fetcher.schemas.html">hyfetcher.fetcher.schemas</a></li>
 </ul>
 </li>
@@ -295,7 +295,7 @@
       
       
       
-      <li><a href="https://github.com/entelecheia/hyfi-fetcher/edit/main/book/_autosummary/hyfetcher.rst" target="_blank"
+      <li><a href="https://github.com/entelecheia/hyfi-fetcher/edit/main/book/_autosummary/hyfetcher.fetcher.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +312,7 @@
       
       
       
-      <li><a href="https://github.com/entelecheia/hyfi-fetcher/issues/new?title=Issue%20on%20page%20%2F_autosummary/hyfetcher.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/entelecheia/hyfi-fetcher/issues/new?title=Issue%20on%20page%20%2F_autosummary/hyfetcher.fetcher.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +342,7 @@
       
       
       
-      <li><a href="../_sources/_autosummary/hyfetcher.rst" target="_blank"
+      <li><a href="../_sources/_autosummary/hyfetcher.fetcher.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +424,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>hyfetcher</h1>
+    <h1>hyfetcher.fetcher</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -438,36 +438,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-hyfetcher">
-<span id="hyfetcher"></span><h1>hyfetcher<a class="headerlink" href="#module-hyfetcher" title="Link to this heading">#</a></h1>
-<p>Implements the package initialization logic</p>
-<p class="rubric">Functions</p>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_version</span></code>()</p></td>
-<td><p>Get the package version.</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="module-hyfetcher.fetcher">
+<span id="hyfetcher-fetcher"></span><h1>hyfetcher.fetcher<a class="headerlink" href="#module-hyfetcher.fetcher" title="Link to this heading">#</a></h1>
 <p class="rubric">Modules</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="hyfetcher.agents.html#module-hyfetcher.agents" title="hyfetcher.agents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.agents</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hyfetcher.chains.html#module-hyfetcher.chains" title="hyfetcher.chains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.chains</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hyfetcher.conf.html#module-hyfetcher.conf" title="hyfetcher.conf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.conf</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hyfetcher.fetcher.html#module-hyfetcher.fetcher" title="hyfetcher.fetcher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.fetcher</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="hyfetcher.llms.html#module-hyfetcher.llms" title="hyfetcher.llms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.llms</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="hyfetcher.tools.html#module-hyfetcher.tools" title="hyfetcher.tools"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.tools</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="hyfetcher.fetcher.schemas.html#module-hyfetcher.fetcher.schemas" title="hyfetcher.fetcher.schemas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyfetcher.fetcher.schemas</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -505,20 +481,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api.html"
+       href="hyfetcher.conf.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">API Reference</p>
+        <p class="prev-next-title">hyfetcher.conf</p>
       </div>
     </a>
     <a class="right-next"
-       href="hyfetcher.agents.html"
+       href="hyfetcher.fetcher.schemas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">hyfetcher.agents</p>
+        <p class="prev-next-title">hyfetcher.fetcher.schemas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
