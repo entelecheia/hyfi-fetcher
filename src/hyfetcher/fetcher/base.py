@@ -236,20 +236,20 @@ class BaseFetcher(BaseModel):
 
     def fetch_links(self):
         parse_page_func = partial(
-            self._parse_page_links,
+            self.parse_page_links,
             print_every=self.print_every,
             verbose=self.verbose,
         )
 
         next_page_func = partial(
-            self._next_page_func,
+            self.next_page_func,
             page_placeholder=self.page_placeholder,
         )
 
         self._fetch_links(parse_page_func, next_page_func)
 
     def fetch_articles(self):
-        parse_article_text = partial(self._parse_article_text)
+        parse_article_text = partial(self.parse_article_text)
 
         self._fetch_articles(parse_article_text)
 
@@ -369,7 +369,7 @@ class BaseFetcher(BaseModel):
             articles.extend(result)
         return articles
 
-    def _next_page_func(
+    def next_page_func(
         self,
         start_url: str,
         current_url: Optional[str],
@@ -387,7 +387,7 @@ class BaseFetcher(BaseModel):
         logger.info("Page url: %s", page_url)
         return page_url
 
-    def _parse_page_links(
+    def parse_page_links(
         self,
         page_url: str,
         print_every: int = 10,
@@ -398,7 +398,7 @@ class BaseFetcher(BaseModel):
         # TODO: Parse the page and extract all links
         raise NotImplementedError("Parsing links is not implemented in base class")
 
-    def _parse_article_text(self, url: str) -> dict:
+    def parse_article_text(self, url: str) -> dict:
         # TODO: Scrape the article page and extract the text
         raise NotImplementedError(
             "Parsing article text is not implemented in base class"
