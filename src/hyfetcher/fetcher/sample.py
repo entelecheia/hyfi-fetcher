@@ -82,8 +82,7 @@ class SampleFetcher(BaseFetcher):
                 logger.info("No title found for article %s", article_no)
                 continue
             title = title_div.text
-            a_link = article.find("a")
-            if a_link:
+            if a_link := article.find("a"):
                 url = self.base_url + a_link["href"]
             else:
                 logger.info("No link found for article %s", article_no)
