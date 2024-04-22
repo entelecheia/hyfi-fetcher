@@ -5,7 +5,7 @@ def test_generate_config():
     SampleFetcher.generate_config()
 
 
-def test_sierra_fetcher():
+def test_ssample_fetcher():
     siera = SampleFetcher(
         search_keywords=[],
         max_num_pages=1,
@@ -24,4 +24,4 @@ def test_sierra_fetcher():
 
 if __name__ == "__main__":
     test_generate_config()
-    test_sierra_fetcher()
+    test_ssample_fetcher()
