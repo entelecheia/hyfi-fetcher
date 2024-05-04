@@ -31,7 +31,7 @@ HyFI-Fetcher is a Python package for programmatically scraping websites to extra
 - GitHub: [https://github.com/entelecheia/hyfi-fetcher][repo-url]
 - PyPI: [https://pypi.org/project/hyfi-fetcher][pypi-url]
 
-HyFI-Fetcher is a LLM powered web scraping tool for HyFI. It is designed to extract data from various websites and serve as a plugin for HyFI.
+HyFI-Fetcher is an LLM powered web scraping tool for HyFI. It is designed to extract data from various websites and serve as a plugin for HyFI.
 
 ## Changelog
 
